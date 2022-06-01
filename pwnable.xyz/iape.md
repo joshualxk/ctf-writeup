@@ -104,5 +104,3 @@ void win(void)
 ![调用栈](.assets/iape/调用栈.png)
 
 main函数在调用append前调用read_int32，因为没有初始化buffer，所有buffer+0x8的位置会有残留的ret地址，既read_int32+64地址，因此可以填充前面8个字节，以满足A行的条件，从而获取基地址。
-
-- 
